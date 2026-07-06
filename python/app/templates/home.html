@@ -1,0 +1,656 @@
+{% extends 'base.html' %}
+
+{% block title %}VENELUX | Arquitectura del Prestigio{% endblock %}
+
+{% block content %}
+<main class="pt-0">
+    <!-- Hero Section: Industrial Monumental -->
+    <section id="inicio" class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video class="w-full h-full object-cover object-center" autoplay loop muted playsinline fetchpriority="high" poster="/static/img/Hero1.jpeg">
+                <source src="/static/img/HeroVideo.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-8 md:pl-24 lg:pl-36 md:pr-12">
+            <div class="max-w-2xl">
+                <span class="inline-block bg-tertiary-fixed-dim text-primary px-4 py-1 font-label text-xs tracking-[0.2em] mb-4 rounded-sm uppercase" data-i18n="hero_tag">Excelencia Estructural</span>
+                <h1 class="font-headline text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tighter mb-4" data-i18n="hero_title">
+                    Construyendo el <br/> <span class="text-tertiary-fixed-dim">Futuro</span> con Excelencia
+                </h1>
+                <p class="text-body-md md:text-lg text-white/80 max-w-lg mb-8 leading-relaxed font-light" data-i18n="hero_desc">
+                    Líderes en infraestructura y arquitectura industrial de alta gama. Transformamos visiones técnicas en realidades monumentales.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#proyectos" class="bg-secondary text-on-secondary px-8 py-4 font-headline font-bold text-base rounded-DEFAULT hover:bg-on-secondary-container transition-all active:scale-95 flex items-center justify-center gap-2">
+                        <span data-i18n="hero_btn_projects">Ver Proyectos</span>
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                    <a href="#nosotros" class="border border-white/20 text-white backdrop-blur-md px-8 py-4 font-headline font-bold text-base text-center rounded-DEFAULT hover:bg-white/10 transition-all active:scale-95" data-i18n="hero_btn_services">
+                        Nuestros Servicios
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-12 hidden md:flex flex-col items-center gap-4">
+            <div class="w-[1px] h-24 bg-gradient-to-b from-white to-transparent"></div>
+            <span class="text-white/40 font-label text-[10px] tracking-widest vertical-text uppercase transform rotate-180" style="writing-mode: vertical-lr;" data-i18n="home_scroll_indicator">Deslizar</span>
+        </div>
+    </section>
+
+    <!-- Stats Section (Asymmetric) -->
+    <section class="bg-surface py-12 md:py-0">
+        <div class="container mx-auto px-8 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 -translate-y-0 md:-translate-y-12 relative z-20">
+                <div class="bg-primary p-12 text-white">
+                    <p class="text-5xl font-headline font-extrabold text-tertiary-fixed-dim mb-2">250+</p>
+                    <p class="font-label text-xs tracking-widest uppercase opacity-60" data-i18n="stats_projects">Obras Finalizadas</p>
+                </div>
+                <div class="bg-surface-container-high p-12 text-primary border-x border-outline-variant/10">
+                    <p class="text-5xl font-headline font-extrabold mb-2">15M</p>
+                    <p class="font-label text-xs tracking-widest uppercase opacity-60" data-i18n="stats_sqm">Metros Cuadrados</p>
+                </div>
+                <div class="bg-tertiary-fixed-dim p-12 text-primary">
+                    <p class="text-5xl font-headline font-extrabold mb-2">0</p>
+                    <p class="font-label text-xs tracking-widest uppercase opacity-60" data-i18n="stats_incidents">Incidentes Laborales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Profile Section -->
+    <section id="nosotros" class="py-24 bg-white">
+        <div class="container mx-auto px-8 md:px-12">
+            <div class="mb-16 reveal-item">
+                <h2 class="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tight" data-i18n="prof_title">Perfil Corporativo</h2>
+                <div class="w-16 h-1 bg-secondary mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 reveal-item stagger-delay-1">
+                <div class="bg-surface border border-outline-variant/20 p-10 rounded-2xl shadow-sm hover:shadow-xl transition-shadow">
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary text-3xl">flag</span>
+                        <span data-i18n="prof_mission_title">Nuestra Misión</span>
+                    </h3>
+                    <p class="text-on-surface-variant font-light leading-relaxed" data-i18n="prof_mission_desc">En Venelux, C.A., nuestra misión es ofrecer soluciones integrales e innovadoras en los sectores de construcción, diseño e ingeniería civil. También somos distribuidores confiables de suministros esenciales para las industrias petrolera y petroquímica. Estamos comprometidos con la excelencia, eficiencia y sostenibilidad en todos nuestros esfuerzos, apuntando a superar las expectativas del cliente y contribuir al desarrollo nacional.</p>
+                </div>
+                <div class="bg-primary text-white p-10 rounded-2xl shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10">
+                        <span class="material-symbols-outlined text-[200px]">visibility</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-[#fdbc13] mb-4 flex items-center gap-3 relative z-10">
+                        <span class="material-symbols-outlined text-3xl">visibility</span>
+                        <span data-i18n="prof_vision_title">Nuestra Visión</span>
+                    </h3>
+                    <p class="text-white/80 font-light leading-relaxed relative z-10" data-i18n="prof_vision_desc">Ser una empresa líder y reconocida en Venezuela y la región, destacada por nuestros servicios integrales, experiencia técnica y firme compromiso con la calidad y satisfacción del cliente en la construcción civil, diseño, ingeniería y provisión industrial.</p>
+                </div>
+            </div>
+
+            <!-- Core Businesses & Strengths -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 reveal-item stagger-delay-2">
+                <div class="lg:col-span-8">
+                    <h3 class="font-headline text-3xl font-bold text-primary mb-8" data-i18n="prof_core_title">Líneas de Negocio</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="border-t-2 border-primary pt-6">
+                            <h4 class="font-headline font-bold text-primary text-lg mb-2" data-i18n="prof_core_1">Construcción, Diseño e Ingeniería Civil</h4>
+                            <div data-i18n="prof_core_1_desc"><ul class='list-disc pl-5 mt-4 space-y-2 text-on-surface-variant font-light'><li><b>Obras Civiles:</b> Residencial, comercial, industrial e infraestructura.</li><li><b>Diseño Arquitectónico:</b> Soluciones funcionales modernas y sostenibles.</li><li><b>Ingeniería Estructural:</b> Análisis, diseño y optimización de sistemas.</li><li><b>Gestión de Proyectos:</b> Control integral desde la concepción hasta la entrega.</li></ul></div>
+                        </div>
+                        <div class="border-t-2 border-secondary pt-6">
+                            <h4 class="font-headline font-bold text-primary text-lg mb-2" data-i18n="prof_core_2">Distribución Petrolera y Petroquímica</h4>
+                            <div data-i18n="prof_core_2_desc"><ul class='list-disc pl-5 mt-4 space-y-2 text-on-surface-variant font-light'><li><b>Equipos Industriales:</b> Maquinaria para exploración y refinación.</li><li><b>Químicos y Aditivos:</b> Lubricantes y agregados para eficiencia operativa.</li><li><b>Tuberías y Válvulas:</b> Componentes de transporte de alta resistencia.</li><li><b>Seguridad y Ambiente:</b> Soluciones para integridad en entornos peligrosos.</li></ul></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 bg-surface-container-low p-8 rounded-2xl">
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-6" data-i18n="prof_strengths_title">Fortalezas Clave</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span class="text-on-surface font-medium" data-i18n="prof_str_1">Soluciones Integradas</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span class="text-on-surface font-medium" data-i18n="prof_str_2">Equipo Experimentado</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span class="text-on-surface font-medium" data-i18n="prof_str_3">Compromiso de Calidad</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span class="text-on-surface font-medium" data-i18n="prof_str_4">Enfoque en el Cliente</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary">check_circle</span><span class="text-on-surface font-medium" data-i18n="prof_str_5">Alianzas Estratégicas</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="servicios" class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-outline-variant/10">
+        <div class="text-center mb-16 reveal-item">
+            <span class="text-secondary font-label tracking-[0.4em] uppercase text-xs mb-4 block" data-i18n="home_services_tag">Nuestras Capacidades</span>
+            <h2 class="text-primary font-headline text-5xl font-bold tracking-tighter" data-i18n="home_services_title">Servicios Especializados</h2>
+        </div>
+        <div class="flex flex-col gap-16">
+            <!-- Service 1: Remodelación -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden reveal-item hover-lift stagger-delay-1">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjEzug0MBYNo0RHLEt4-nStU-Srzi0F9zO0rdkHlLz1Zfi2NAaiYrfg0HfMm83BpFIYCui-PNWLVjuZPKWfOOwezeXT4Q_71egZ1odnZJQP7KykgZ87twfCiAc4D6buOW6sreHqkQb9cvE3DNq4B1jIo5G6JEKduJzOuuaWyt0iXGpEbRXKrfxjNyMQ2n44aUMDXMnbrgo59hu_D_wxhtKQDnjS2sr3fspupN-jikSCl5AdC1YqxGSKbY70bFA3veh2qa02BZfac" alt="Remodelación de Interiores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s1_tag">Interiores Premium</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s1_title">Remodelación de Interiores</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="home_services_s1_desc">
+                        Especialistas en la transformación de espacios corporativos de alto nivel, integrando acabados de lujo con funcionalidad ergonómica.
+                    </p>
+                    <div class="flex items-center gap-2 text-secondary font-bold text-sm">
+                        <span class="material-symbols-outlined">architecture</span>
+                        <span data-i18n="home_services_quality">CALIDAD GARANTIZADA</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Service 2: IT Infrastructure -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden reveal-item hover-lift stagger-delay-2">
+                <div class="md:col-span-5 p-8 md:pl-12 order-2 md:order-1">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s2_tag">Construcción Digital</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s2_title">Infraestructura IT</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="home_services_s2_desc">
+                        Integración nativa de centros de datos, redes de alta velocidad y sistemas inteligentes de gestión desde la fase de obra civil.
+                    </p>
+                    <div class="flex items-center gap-2 text-secondary font-bold text-sm">
+                        <span class="material-symbols-outlined">lan</span>
+                        <span data-i18n="home_services_connectivity">CONECTIVIDAD TOTAL</span>
+                    </div>
+                </div>
+                <div class="md:col-span-7 h-[400px] overflow-hidden order-1 md:order-2">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ewy5eLrAWU9SJJhPL8QdHmv5mue-VUDfez8doRlVZV35ipw3kBII81OLG2e2MrXpURfZLK2ttOOxyk-V6D-9rE41Xn4BqsAn8i41Qc7O0dpAN-gVjpIWlpI5XBNTeX25zVNYnRCx_BMEARcP36bBP8SxVEizy5bbzKxstts9GJEQKMj9AmHIPThMrIRjv8rGnxPKkkXV7Y0UTcVfhCvOtQMa7V40UAsEKAPOzk4qscsjNv0Jyzpb2OORfaN3okJfCdHRd4ncBrI" alt="Infraestructura IT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            <!-- Service 3: Galpones -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_QkWASj4V9k-hqBGtom4Y3348Sx5_MCIOJvLLm2LydQx_qdQKvrRCltOWcAAYzcSzTdLOWDNrg-2_PZEMr3plNycsyDknv_cLhS-sSVcwYoXI0WG9ZyzY1c1ih2DjEsnMphQ3S5RNiKopUlRwtYDD0fswLrL5mgEBSTVEoP4vrn9EMY_jvdysftpXU17S9LRkq-9P7pvrf5Pve18zuIyDf4S5uzovD9FPzK9FMQxLKcrs2NDuoSV89KdxsLzGL5gDBmCaxNuU2c8" alt="Construcción de Galpones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s3_tag">Logística Estratégica</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s3_title">Construcción de Galpones</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="home_services_s3_desc">
+                        Soluciones llave en mano para naves industriales de gran envergadura, con estructuras metálicas de alta durabilidad.
+                    </p>
+                    <div class="flex items-center gap-2 text-secondary font-bold text-sm">
+                        <span class="material-symbols-outlined">foundation</span>
+                        <span data-i18n="home_services_engineering">INGENIERÍA ESTRUCTURAL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="proyectos" class="py-24 bg-surface-bright">
+        <div class="container mx-auto px-8 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold text-primary mb-4 tracking-tight" data-i18n="proj_title">Proyectos Destacados</h2>
+                    <p class="text-on-surface-variant text-lg" data-i18n="proj_desc">Explora nuestras intervenciones más emblemáticas donde la ingeniería se encuentra con la precisión técnica.</p>
+                </div>
+                <button type="button" onclick="openPortfolioModal()" class="text-secondary font-headline font-bold flex items-center gap-2 group border-b-2 border-transparent hover:border-secondary transition-all pb-1">
+                    <span data-i18n="proj_btn_portfolio">Ver Portfolio Completo</span>
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="trending_flat">trending_flat</span>
+                </button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for project in projects %}
+                    {% set stagger = (loop.index0 % 3) + 1 %}
+                    {% if project.files %}
+                        {% set cover = '/static/img/PROYECTOS%20VENELUX/' ~ project.folder|urlencode ~ '/' ~ project.files[0]|urlencode %}
+                    {% else %}
+                        {% set cover = '/static/img/placeholder.jpg' %}
+                    {% endif %}
+                    
+                    <div class="group relative overflow-hidden rounded-lg bg-surface-container-low transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 reveal-item hover-lift stagger-delay-{{ stagger }} cursor-pointer" 
+                         onclick="openProjectDetail({{ project|tojson|forceescape }})">
+                        <div class="aspect-[16/10] overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="{{ cover }}" alt="{{ project.folder }}" loading="lazy" decoding="async"/>
+                        </div>
+                        <div class="p-8">
+                            {% set pKey = 'proj_' ~ project.folder | lower | replace(' ', '_') | replace('-', '_') %}
+                            <span class="font-label text-[10px] text-secondary tracking-widest uppercase mb-2 block" data-i18n="{{ pKey }}_fecha">{{ project.meta.fecha }}</span>
+                            <h3 class="font-headline text-2xl font-bold text-primary mb-4 leading-tight h-14 overflow-hidden">{{ project.folder }}</h3>
+                            <p class="text-on-surface-variant text-sm mb-6 leading-relaxed line-clamp-2 h-10 overflow-hidden" data-i18n="{{ pKey }}_trabajos">{{ project.meta.trabajos }}</p>
+                            <div class="flex items-center gap-4 pt-6 border-t border-outline-variant/10">
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] font-label uppercase opacity-50" data-i18n="proj_location_label">Localización</span>
+                                    <span class="text-xs font-bold text-primary" data-i18n="{{ pKey }}_ubicacion">{{ project.meta.ubicacion }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-full">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section (Blueprint Style) -->
+    <section id="beneficios" class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+            <svg class="w-full h-full" viewbox="0 0 100 100">
+                <path d="M0 10 H100 M0 20 H100 M0 30 H100 M0 40 H100 M0 50 H100 M0 60 H100 M0 70 H100 M0 80 H100 M0 90 H100" stroke="white" stroke-width="0.1"></path>
+                <path d="M10 0 V100 M20 0 V100 M30 0 V100 M40 0 V100 M50 0 V100 M60 0 V100 M70 0 V100 M80 0 V100 M90 0 V100" stroke="white" stroke-width="0.1"></path>
+            </svg>
+        </div>
+        <div class="container mx-auto px-8 md:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <div class="w-full lg:w-1/2">
+                    <span class="font-label text-xs tracking-[0.3em] uppercase text-tertiary-fixed-dim mb-6 block" data-i18n="why_tag">Nuestro Diferencial</span>
+                    <h2 class="font-headline text-4xl md:text-6xl font-bold leading-tight mb-8 reveal-item" data-i18n="why_title">Por qué elegirnos</h2>
+                    <p class="text-on-primary-container text-lg mb-12 max-w-xl leading-relaxed" data-i18n="why_desc">
+                        En VENELUX, no solo construimos estructuras; diseñamos legados. Nuestra metodología integra tecnología de punta con una ética de trabajo inquebrantable.
+                    </p>
+                    <div class="space-y-12 reveal-item">
+                        <div class="flex gap-6 group hover-lift">
+                            <div class="w-16 h-16 shrink-0 border border-tertiary-fixed-dim/30 flex items-center justify-center group-hover:bg-tertiary-fixed-dim group-hover:text-primary transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline text-xl font-bold mb-2" data-i18n="why_item1_title">Ingeniería de Precisión</h4>
+                                <p class="text-on-primary-container/80 text-sm leading-relaxed" data-i18n="why_item1_desc">Cálculos milimétricos y modelado BIM avanzado para asegurar la perfección en cada etapa constructiva.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-16 h-16 shrink-0 border border-tertiary-fixed-dim/30 flex items-center justify-center group-hover:bg-tertiary-fixed-dim group-hover:text-primary transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl">eco</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline text-xl font-bold mb-2" data-i18n="why_item2_title">Sostenibilidad Innovadora</h4>
+                                <p class="text-on-primary-container/80 text-sm leading-relaxed" data-i18n="why_item2_desc">Utilizamos materiales de bajo impacto y procesos circulares para reducir la huella de carbono industrial.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-16 h-16 shrink-0 border border-tertiary-fixed-dim/30 flex items-center justify-center group-hover:bg-tertiary-fixed-dim group-hover:text-primary transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline text-xl font-bold mb-2" data-i18n="why_item3_title">Calidad sin Compromiso</h4>
+                                <p class="text-on-primary-container/80 text-sm leading-relaxed" data-i18n="why_item3_desc">Certificaciones internacionales y un control de calidad riguroso en cada uno de nuestros proyectos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="aspect-square relative overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover" src="/static/img/Casco%20blanco.jpeg" alt="Supervisor de obra con casco blanco"/>
+                        <div class="absolute inset-0 bg-secondary/10 mix-blend-overlay"></div>
+                    </div>
+                    <!-- Blueprint Overlay Detail -->
+                    <div class="absolute -bottom-10 -left-10 blueprint-overlay p-8 hidden md:block max-w-[280px] shadow-2xl bg-primary border border-tertiary-fixed-dim/20">
+                        <span class="font-label text-[10px] tracking-widest uppercase mb-2 block opacity-70" data-i18n="why_badge_tag">Certificación ISO 9001</span>
+                        <p class="font-headline text-lg font-bold text-tertiary-fixed-dim" data-i18n="why_badge_desc">Liderazgo técnico en normativas internacionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section: Full Integration -->
+    <section id="contacto" class="py-24 bg-surface-container-low border-y border-outline-variant/10">
+        <div class="container mx-auto px-8 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Form Section -->
+                <div class="space-y-8 reveal-item">
+                    <div>
+                        <h2 class="font-headline text-4xl m-0 font-bold text-primary mb-4 tracking-tight" data-i18n="contact_title">Escríbanos</h2>
+                        <p class="text-on-surface-variant font-body" data-i18n="contact_subtitle">Inicie su próximo proyecto con el respaldo de ingeniería de Venelux.</p>
+                    </div>
+                    <form action="{{ url_for('contact') }}" method="POST" class="space-y-6 bg-white p-8 shadow-sm">
+                        <div class="space-y-1">
+                            <label class="block text-[10px] font-bold text-primary uppercase tracking-widest font-label" data-i18n="form_name_label">Nombre Completo</label>
+                            <input name="name" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary p-4 text-sm font-body" placeholder="Ej. Ing. Roberto Sánchez" data-i18n-placeholder="form_name_placeholder" type="text" required/>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="block text-[10px] font-bold text-primary uppercase tracking-widest font-label" data-i18n="form_email_label">Correo Electrónico</label>
+                            <input name="email" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary p-4 text-sm font-body" placeholder="r.sanchez@corporativo.com" data-i18n-placeholder="form_email_placeholder" type="email" required/>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="block text-[10px] font-bold text-primary uppercase tracking-widest font-label" data-i18n="form_message_label">Mensaje o Requerimiento</label>
+                            <textarea name="message" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary p-4 text-sm font-body" placeholder="Describa el alcance de su proyecto o licitación..." data-i18n-placeholder="form_message_placeholder" rows="4" required></textarea>
+                        </div>
+                        <button class="w-full bg-primary text-white font-bold py-5 px-8 flex justify-between items-center group transition-all duration-300 hover:bg-primary-container" type="submit">
+                            <span class="tracking-widest text-xs uppercase" data-i18n="form_submit_btn">Enviar Mensaje</span>
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="space-y-8 reveal-item stagger-delay-1">
+                    <div class="space-y-6">
+                        <h2 class="font-headline text-4xl m-0 font-bold text-primary mb-4 tracking-tight" data-i18n="info_location_title">Ubicación</h2>
+                        <!-- Info Card 1: HQ -->
+                        <div class="flex gap-4 p-6 bg-white border-l-4 border-secondary shadow-sm">
+                            <div class="bg-surface-container-highest p-3 h-fit rounded-lg">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                            </div>
+                            <div>
+                                <h3 class="text-primary font-bold text-sm uppercase tracking-tight" data-i18n="info_hq_title">Sede Central</h3>
+                                <p class="text-on-surface-variant text-sm mt-1 leading-snug" data-i18n="footer_address">CTRA NACIONAL LOCAL PARCELA NRO 5,<br/>ZONA INDUSTRIAL "COMPLEJO DE LAS INDUSTRIAS PRUINCA",<br/>GUACARA CARABOBO ZONA POSTAL 2015</p>
+                            </div>
+                        </div>
+                        <!-- Info Card 2: Phone -->
+                        <div class="flex gap-4 p-6 bg-white border-l-4 border-primary shadow-sm">
+                            <div class="bg-surface-container-highest p-3 h-fit rounded-lg">
+                                <span class="material-symbols-outlined text-primary">call</span>
+                            </div>
+                            <div>
+                                <h3 class="text-primary font-bold text-sm uppercase tracking-tight" data-i18n="info_contact_title">Contacto Directo</h3>
+                                <p class="text-on-surface-variant text-sm mt-1"><a href="tel:+584244117921" class="hover:text-secondary">+58 424 411 7921</a></p>
+                                <p class="text-secondary font-bold text-[10px] mt-1" data-i18n="info_tender_alert">ATENCIÓN A LICITACIONES 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mini Map -->
+                    <div class="relative h-64 w-full bg-surface-container-highest overflow-hidden rounded-sm group">
+                        <div class="absolute inset-0 grayscale opacity-80 group-hover:opacity-100 transition-opacity duration-700 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBPWFxUpXxlIYt7dy-eQyrpqLTtvF28diLetsaRxuUgNRMN7BronzPCdXkX3i2Zd_WFWZVO3I9qgrgX7d7DxeLg4_M0QrZlE_80e-QBltFWBnhEn3VMck89sWmKt72SMwP5AcOAMmCjnIaavnf7HHpa7eMSGTPS2Yn2QWlO0xCMpTExEh2DCUA0Zf8agfBTfg4pDdrPo_Qx0TI7kYipVRbmzI1a_dADiuWkYIbJMRGm02UrCfyChKd19jCEF5TtXbDni-Oqg2zM00')"></div>
+                        <div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                            <div class="bg-primary text-white p-3 rounded-full shadow-2xl relative z-10 border-2 border-tertiary-fixed-dim">
+                                <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">domain</span>
+                            </div>
+                            <div class="w-1 h-8 bg-primary -mt-1 shadow-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Fullscreen Lightbox -->
+<div id="fullscreenLightbox" class="fixed inset-0 z-[110] hidden bg-black/95 flex items-center justify-center transition-opacity duration-300 opacity-0 cursor-zoom-out" onclick="closeFullscreenLightbox()">
+    <img id="lightboxImage" src="" class="max-w-full max-h-full object-contain transform transition-transform duration-300 scale-95">
+    <button class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors">
+        <span class="material-symbols-outlined text-5xl">close</span>
+    </button>
+</div>
+
+<!-- Project Detail Modal -->
+<div id="projectDetailModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 sm:p-8 bg-[#001e40]/90 backdrop-blur-md transition-opacity duration-300 opacity-0">
+    <div class="modal-container bg-white w-full max-w-7xl max-h-[95vh] rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden transform scale-95 transition-transform duration-300">
+        <!-- Gallery Column (Left) -->
+        <div class="w-full md:w-2/3 h-[400px] md:h-auto bg-slate-50 flex flex-col">
+            <div id="modalMainMedia" class="flex-grow flex items-center justify-center overflow-hidden bg-black group relative cursor-zoom-in" onclick="openFullscreenLightbox()">
+                <!-- Main Media loaded here -->
+                <div id="galleryCounter" class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-bold pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">photo_library</span>
+                    <span id="counterText">1 / 1</span>
+                </div>
+                
+                <!-- Nav Arrows -->
+                <button onclick="prevProjectMedia(event)" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/30 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-3xl">chevron_left</span>
+                </button>
+                <button onclick="nextProjectMedia(event)" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/30 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-3xl">chevron_right</span>
+                </button>
+            </div>
+            <!-- Thumbnails Focus Strip -->
+            <div id="modalThumbnails" class="h-32 bg-white p-4 flex gap-4 overflow-x-auto border-t border-slate-100 scrollbar-hide">
+                <!-- Thumbs loaded here -->
+            </div>
+        </div>
+        <!-- Info Column (Right) -->
+        <div class="w-full md:w-1/3 p-8 md:p-12 overflow-y-auto flex flex-col bg-white">
+            <div class="flex justify-between items-start mb-8">
+                <div class="flex-grow">
+                    <span class="text-secondary font-label text-[10px] tracking-[0.3em] uppercase mb-2 block" id="modalProjectDate">FECHA</span>
+                    <h3 class="font-headline text-3xl font-bold text-primary leading-tight" id="modalProjectTitle">Título Proyecto</h3>
+                </div>
+                <button onclick="closeProjectDetail()" class="text-slate-400 hover:text-primary transition-colors p-2 -mr-4">
+                    <span class="material-symbols-outlined text-4xl">close</span>
+                </button>
+            </div>
+            
+            <div class="space-y-8">
+                <div>
+                    <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4" data-i18n="modal_info_title">Información del Proyecto</h4>
+                    <dl class="grid grid-cols-1 gap-6">
+                        <div>
+                            <dt class="text-[10px] font-bold text-secondary uppercase tracking-tight" data-i18n="modal_client_label">Contratante</dt>
+                            <dd class="text-primary font-bold text-lg" id="modalProjectClient">Cargando...</dd>
+                        </div>
+                        <div>
+                            <dt class="text-[10px] font-bold text-secondary uppercase tracking-tight" data-i18n="modal_location_label">Ubicación</dt>
+                            <dd class="text-on-surface-variant font-medium flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">location_on</span>
+                                <span id="modalProjectLocation">Cargando...</span>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                
+                <div class="border-t border-slate-100 pt-8">
+                    <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4" data-i18n="modal_review_title">Reseña Técnica</h4>
+                    <p class="text-on-surface-variant leading-relaxed font-light text-base" id="modalProjectDesc">
+                        Cargando descripción...
+                    </p>
+                </div>
+
+                <div class="mt-auto pt-8">
+                    <a href="https://wa.me/584244117921" target="_blank" class="w-full bg-primary text-white py-4 rounded-lg flex items-center justify-center gap-3 font-bold hover:bg-primary-container transition-all">
+                        <span class="material-symbols-outlined text-xl">contact_support</span>
+                        <span data-i18n="modal_consult_btn">Consultar este Proyecto</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentProjectData = null;
+let currentMediaIndex = 0;
+
+function openPortfolioModal() {
+    // Scroll to the projects section to show the full portfolio grid
+    const proyectosSection = document.getElementById('proyectos');
+    if (proyectosSection) {
+        proyectosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function openProjectDetail(project) {
+    currentProjectData = project;
+    currentMediaIndex = 0;
+    const modal = document.getElementById('projectDetailModal');
+    const meta = project.meta;
+
+    // Set Metadata
+    document.getElementById('modalProjectTitle').innerText = project.folder;
+    document.getElementById('modalProjectClient').innerText = meta.cliente;
+    document.getElementById('modalProjectLocation').innerText = meta.ubicacion;
+    document.getElementById('modalProjectDate').innerText = meta.fecha;
+    document.getElementById('modalProjectDesc').innerText = meta.trabajos;
+
+    // Build thumbnails
+    const thumbContainer = document.getElementById('modalThumbnails');
+    thumbContainer.innerHTML = '';
+    
+    project.files.forEach((file, idx) => {
+        const isVideo = file.toLowerCase().endsWith('.mp4');
+        const src = `/static/img/PROYECTOS%20VENELUX/${encodeURIComponent(project.folder)}/${encodeURIComponent(file)}`;
+        
+        const thumb = document.createElement('div');
+        thumb.className = `flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden cursor-pointer border-2 transition-all ${idx === 0 ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'}`;
+        
+        if (isVideo) {
+            thumb.innerHTML = `<div class="w-full h-full bg-slate-200 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-4xl">play_circle</span></div>`;
+        } else {
+            thumb.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
+        }
+        
+        thumb.onclick = () => updateMainProjectMedia(idx);
+        thumbContainer.appendChild(thumb);
+    });
+
+    updateMainProjectMedia(0);
+
+    // Open Modal
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.remove('opacity-0');
+    modal.querySelector('.modal-container').classList.remove('scale-95');
+    modal.querySelector('.modal-container').classList.add('scale-100');
+    document.body.style.overflow = 'hidden';
+}
+
+function updateMainProjectMedia(index) {
+    if (!currentProjectData) return;
+    currentMediaIndex = index;
+    const file = currentProjectData.files[index];
+    const src = `/static/img/PROYECTOS%20VENELUX/${encodeURIComponent(currentProjectData.folder)}/${encodeURIComponent(file)}`;
+    const isVideo = file.toLowerCase().endsWith('.mp4');
+    const mainContainer = document.getElementById('modalMainMedia');
+
+    // Counter
+    document.getElementById('counterText').innerText = `${index + 1} / ${currentProjectData.files.length}`;
+
+    // Remove old media
+    mainContainer.querySelectorAll('img:not(.static), video').forEach(el => el.remove());
+    
+    let mediaEl;
+    if (isVideo) {
+        mediaEl = document.createElement('video');
+        mediaEl.src = src;
+        mediaEl.controls = true;
+        mediaEl.autoplay = true;
+        mediaEl.className = 'w-full h-full object-contain bg-black gallery-fade';
+    } else {
+        mediaEl = document.createElement('img');
+        mediaEl.src = src;
+        mediaEl.className = 'w-full h-full object-contain gallery-fade';
+    }
+    mainContainer.prepend(mediaEl);
+
+    // Update active thumb
+    document.querySelectorAll('#modalThumbnails > div').forEach((t, i) => {
+        t.classList.toggle('border-primary', i === index);
+        t.classList.toggle('opacity-60', i !== index);
+        t.classList.toggle('border-transparent', i !== index);
+        if (i === index) t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+}
+
+function nextProjectMedia(e) {
+    if(e) e.stopPropagation();
+    if (!currentProjectData) return;
+    let nextIdx = (currentMediaIndex + 1) % currentProjectData.files.length;
+    updateMainProjectMedia(nextIdx);
+}
+
+function prevProjectMedia(e) {
+    if(e) e.stopPropagation();
+    if (!currentProjectData) return;
+    let prevIdx = (currentMediaIndex - 1 + currentProjectData.files.length) % currentProjectData.files.length;
+    updateMainProjectMedia(prevIdx);
+}
+
+function openFullscreenLightbox() {
+    const file = currentProjectData.files[currentMediaIndex];
+    if (file.toLowerCase().endsWith('.mp4')) return;
+
+    const src = `/static/img/PROYECTOS%20VENELUX/${encodeURIComponent(currentProjectData.folder)}/${encodeURIComponent(file)}`;
+    const lightbox = document.getElementById('fullscreenLightbox');
+    const img = document.getElementById('lightboxImage');
+    
+    img.src = src;
+    lightbox.classList.remove('hidden');
+    void lightbox.offsetWidth;
+    lightbox.classList.remove('opacity-0');
+    img.classList.remove('scale-95');
+    img.classList.add('scale-100');
+}
+
+function closeFullscreenLightbox() {
+    const lightbox = document.getElementById('fullscreenLightbox');
+    const img = document.getElementById('lightboxImage');
+    lightbox.classList.add('opacity-0');
+    img.classList.remove('scale-100');
+    img.classList.add('scale-95');
+    setTimeout(() => lightbox.classList.add('hidden'), 300);
+}
+
+function closeProjectDetail() {
+    const modal = document.getElementById('projectDetailModal');
+    const video = modal.querySelector('video');
+    if (video) video.pause();
+
+    modal.classList.add('opacity-0');
+    modal.querySelector('.modal-container').classList.remove('scale-100');
+    modal.querySelector('.modal-container').classList.add('scale-95');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        currentProjectData = null;
+    }, 300);
+}
+
+document.getElementById('projectDetailModal').addEventListener('click', function(e) {
+    if(e.target === this) closeProjectDetail();
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (document.getElementById('projectDetailModal').classList.contains('hidden')) return;
+    if (e.key === 'ArrowRight') nextProjectMedia();
+    if (e.key === 'ArrowLeft') prevProjectMedia();
+    if (e.key === 'Escape') {
+        if (!document.getElementById('fullscreenLightbox').classList.contains('hidden')) {
+            closeFullscreenLightbox();
+        } else {
+            closeProjectDetail();
+        }
+    }
+});
+
+// Reveal and Scroll Observer setup
+document.addEventListener('DOMContentLoaded', () => {
+    // One Page Scroll Spy Logic
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    };
+    
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-active');
+                    if (link.getAttribute('href').endsWith('#' + id)) {
+                        link.classList.add('nav-active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => spyObserver.observe(section));
+
+    // Reveal on Scroll Logic
+    const revealItems = document.querySelectorAll('.reveal-item');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+});
+</script>
+{% endblock %}

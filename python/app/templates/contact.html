@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto | VENELUX - Ingeniería Monumental{% endblock %}
+
+{% block content %}
+<main class="pt-24 bg-surface-container-low">
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Form Section -->
+            <div class="space-y-8 bg-white p-8 md:p-12 shadow-sm rounded-lg">
+                <div>
+                    <h1 class="font-headline text-4xl font-bold text-primary mb-4 tracking-tight" data-i18n="contact_title">Escríbanos</h1>
+                    <p class="text-on-surface-variant font-body" data-i18n="contact_subtitle">Inicie su próximo proyecto con el respaldo de ingeniería de Venelux.</p>
+                </div>
+                
+                {% if error %}
+                <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 text-sm" role="alert">
+                    <p class="font-bold" data-i18n="form_error_label">Error</p>
+                    <p>{{ error }}</p>
+                </div>
+                {% endif %}
+
+                {% if success %}
+                <div class="bg-green-50 border-l-4 border-green-500 text-green-700 p-4 text-sm" role="alert">
+                    <p class="font-bold" data-i18n="form_success_label">Éxito</p>
+                    <p>{{ success }}</p>
+                </div>
+                {% endif %}
+
+                <form action="{{ url_for('contact') }}" method="POST" class="space-y-6">
+                    <div class="space-y-1">
+                        <label class="block text-[10px] font-bold text-primary uppercase tracking-widest font-label" data-i18n="form_name_label">Nombre Completo</label>
+                        <input name="name" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary p-4 text-sm font-body" placeholder="Ej. Ing. Roberto Sánchez" data-i18n-placeholder="form_name_placeholder" type="text" required/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block text-[10px] font-bold text-primary uppercase tracking-widest font-label" data-i18n="form_email_label">Correo Electrónico</label>
+                        <input name="email" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary p-4 text-sm font-body" placeholder="r.sanchez@corporativo.com" data-i18n-placeholder="form_email_placeholder" type="email" required/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block text-[10px] font-bold text-primary uppercase tracking-widest font-label" data-i18n="form_message_label">Mensaje o Requerimiento</label>
+                        <textarea name="message" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary p-4 text-sm font-body" placeholder="Describa el alcance de su proyecto o licitación..." data-i18n-placeholder="form_message_placeholder" rows="4" required></textarea>
+                    </div>
+                    <button class="w-full bg-primary text-white font-bold py-5 px-8 flex justify-between items-center group transition-all duration-300 hover:bg-primary-container" type="submit">
+                        <span class="tracking-widest text-xs uppercase" data-i18n="form_submit_btn">Enviar Mensaje</span>
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Info & Map -->
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <h2 class="font-headline text-4xl font-bold text-primary mb-4 tracking-tight" data-i18n="info_location_title">Ubicación</h2>
+                    <!-- Info Card 1: HQ -->
+                    <div class="flex gap-4 p-6 bg-white border-l-4 border-secondary shadow-sm rounded-lg">
+                        <div class="bg-surface-container-highest p-3 h-fit rounded-lg">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                        </div>
+                        <div>
+                            <h3 class="text-primary font-bold text-sm uppercase tracking-tight" data-i18n="info_hq_title">Sede Central</h3>
+                            <p class="text-on-surface-variant text-sm mt-1 leading-snug" data-i18n="contact_address">CTRA NACIONAL LOCAL PARCELA NRO 5,<br/>ZONA INDUSTRIAL "COMPLEJO DE LAS INDUSTRIAS PRUINCA",<br/>GUACARA CARABOBO ZONA POSTAL 2015</p>
+                        </div>
+                    </div>
+                    <!-- Info Card 2: Phone -->
+                    <div class="flex gap-4 p-6 bg-white border-l-4 border-primary shadow-sm rounded-lg">
+                        <div class="bg-surface-container-highest p-3 h-fit rounded-lg">
+                            <span class="material-symbols-outlined text-primary">call</span>
+                        </div>
+                        <div>
+                            <h3 class="text-primary font-bold text-sm uppercase tracking-tight" data-i18n="info_contact_title">Contacto Directo</h3>
+                            <p class="text-on-surface-variant text-sm mt-1"><a href="tel:+584244117921" class="hover:text-secondary">+58 424 411 7921</a></p>
+                            <p class="text-secondary font-bold text-[10px] mt-1" data-i18n="info_tender_alert">ATENCIÓN A LICITACIONES 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mini Map -->
+                <div class="relative h-96 w-full bg-surface-container-highest overflow-hidden rounded-lg group shadow-sm">
+                    <div class="absolute inset-0 grayscale opacity-80 group-hover:opacity-100 transition-opacity duration-700 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBPWFxUpXxlIYt7dy-eQyrpqLTtvF28diLetsaRxuUgNRMN7BronzPCdXkX3i2Zd_WFWZVO3I9qgrgX7d7DxeLg4_M0QrZlE_80e-QBltFWBnhEn3VMck89sWmKt72SMwP5AcOAMmCjnIaavnf7HHpa7eMSGTPS2Yn2QWlO0xCMpTExEh2DCUA0Zf8agfBTfg4pDdrPo_Qx0TI7kYipVRbmzI1a_dADiuWkYIbJMRGm02UrCfyChKd19jCEF5TtXbDni-Oqg2zM00')"></div>
+                    <div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                        <div class="bg-primary text-white p-3 rounded-full shadow-2xl relative z-10 border-2 border-tertiary-fixed-dim">
+                            <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">domain</span>
+                        </div>
+                        <div class="w-1 h-8 bg-primary -mt-1 shadow-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

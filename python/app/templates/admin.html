@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Panel de Control de Mensajes | VENELUX{% endblock %}
+
+{% block content %}
+<main class="pt-24 min-h-[80vh] bg-surface-container-low">
+    <section class="py-12 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="font-headline text-3xl md:text-4xl font-bold text-primary mb-2">Mensajes de Contacto</h1>
+                <p class="text-on-surface-variant font-body text-sm">Gestiona y consulta los mensajes enviados desde los formularios web.</p>
+            </div>
+            <div class="bg-primary text-white px-4 py-2 text-xs font-bold font-label tracking-widest uppercase">
+                Panel Administrativo
+            </div>
+        </div>
+
+        {% if error %}
+        <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-6 mb-8 text-sm shadow-sm" role="alert">
+            <p class="font-bold flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-red-500">warning</span>
+                Problema de Conexión
+            </p>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-outline-variant/10">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-outline-variant/10">
+                    <thead class="bg-surface-container-low">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider font-label">Nombre</th>
+                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider font-label">Correo Electrónico</th>
+                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider font-label">Mensaje</th>
+                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-primary uppercase tracking-wider font-label">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/10 bg-white">
+                        {% for msg in messages %}
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="px-6 py-5 whitespace-nowrap text-sm font-bold text-primary">{{ msg.name }}</td>
+                            <td class="px-6 py-5 whitespace-nowrap text-sm text-secondary font-medium"><a href="mailto:{{ msg.email }}" class="hover:underline">{{ msg.email }}</a></td>
+                            <td class="px-6 py-5 text-sm text-on-surface-variant max-w-lg whitespace-normal leading-relaxed">{{ msg.message }}</td>
+                            <td class="px-6 py-5 whitespace-nowrap text-sm text-slate-400 font-label">{{ msg.created_at.strftime('%d/%m/%Y %H:%M') if msg.created_at else 'N/A' }}</td>
+                        </tr>
+                        {% else %}
+                        {% if not error %}
+                        <tr>
+                            <td colspan="4" class="px-6 py-16 text-center text-on-surface-variant">
+                                <span class="material-symbols-outlined text-5xl opacity-30 mb-4 block">mail_outline</span>
+                                <p class="font-medium">No hay mensajes registrados aún.</p>
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

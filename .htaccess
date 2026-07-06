@@ -1,0 +1,41 @@
+# ============================================================
+#  VENELUX — Redirección al servidor Python/Flask
+#  Todo el tráfico de Apache (localhost:8080) se redirige
+#  permanentemente al servidor Flask (127.0.0.1:5000)
+# ============================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # ----------------------------------------------------------
+    # 1. Permitir acceso directo a archivos de imagen y video
+    #    para que Flask pueda leerlos desde disco sin que Apache
+    #    interfiera (solo aplica si Flask los pide internamente).
+    # ----------------------------------------------------------
+    RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|mp4|svg|ico|woff|woff2|ttf)$ [NC]
+    RewriteRule ^ - [L]
+
+    # ----------------------------------------------------------
+    # 2. Redirigir TODO el demás tráfico al servidor Flask.
+    #    Se conserva la ruta y el query string originales.
+    # ----------------------------------------------------------
+    RewriteCond %{HTTP_HOST} ^(localhost|127\.0\.0\.1)$ [NC]
+    RewriteRule ^Venelux/(.*)$ http://127.0.0.1:5000/$1 [R=301,L,QSA]
+
+    # Redirección desde la raíz (sin subcarpeta /Venelux/)
+    RewriteRule ^(.*)$ http://127.0.0.1:5000/$1 [R=301,L,QSA]
+</IfModule>
+
+# ----------------------------------------------------------
+# Cabeceras de seguridad (se mantienen para Apache)
+# ----------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# ----------------------------------------------------------
+# Bloquear listado de directorios
+# ----------------------------------------------------------
+Options -Indexes

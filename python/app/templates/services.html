@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}Nuestros Servicios | VENELUX - Arquitectura del Prestigio{% endblock %}
+
+{% block content %}
+<main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[442px] flex items-center px-8 md:px-16 overflow-hidden bg-primary" style="background: linear-gradient(rgba(0, 30, 64, 0.85), rgba(0, 30, 64, 0.95)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center;">
+        <div class="max-w-4xl z-10">
+            <div class="inline-block px-3 py-1 bg-secondary text-on-secondary text-xs font-bold tracking-[0.2em] uppercase mb-6 rounded-sm" data-i18n="services_hero_tag">Excelencia Técnica</div>
+            <h2 class="text-5xl md:text-7xl font-headline font-extrabold text-white tracking-tighter leading-none mb-6" data-i18n="services_hero_title">
+                Nuestra <span class="text-tertiary-fixed-dim">Especialización</span>
+            </h2>
+            <p class="text-lg md:text-xl text-white/80 font-body max-w-2xl leading-relaxed" data-i18n="services_hero_desc">
+                Transformamos la visión arquitectónica en realidades estructurales mediante ingeniería de vanguardia y una gestión de proyectos sin precedentes.
+            </p>
+        </div>
+        <!-- Decorative Blueprint Element -->
+        <div class="absolute bottom-0 right-0 opacity-10 pointer-events-none hidden lg:block">
+            <svg fill="none" height="400" viewbox="0 0 600 400" width="600" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 400H600V0" stroke="white" stroke-width="2"></path>
+                <path d="M100 400V100H600" stroke="white" stroke-width="2"></path>
+                <circle cx="350" cy="250" r="150" stroke="white" stroke-dasharray="10 10" stroke-width="1"></circle>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="flex flex-col gap-16">
+            <!-- Service 1: Remodelación -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img alt="Luxury corporate interior" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjEzug0MBYNo0RHLEt4-nStU-Srzi0F9zO0rdkHlLz1Zfi2NAaiYrfg0HfMm83BpFIYCui-PNWLVjuZPKWfOOwezeXT4Q_71egZ1odnZJQP7KykgZ87twfCiAc4D6buOW6sreHqkQb9cvE3DNq4B1jIo5G6JEKduJzOuuaWyt0iXGpEbRXKrfxjNyMQ2n44aUMDXMnbrgo59hu_D_wxhtKQDnjS2sr3fspupN-jikSCl5AdC1YqxGSKbY70bFA3veh2qa02BZfac"/>
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s1_tag">Interiores Premium</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s1_title">Remodelación de Interiores</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s1_desc">
+                        Especialistas en la transformación de espacios corporativos de alto nivel, integrando acabados de lujo con funcionalidad ergonómica y diseño biofílico.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 2: IT Infrastructure -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-5 p-8 md:pl-12 order-2 md:order-1">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s2_tag">Construcción Digital</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s2_title">Infraestructura IT</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s2_desc">
+                        Integración nativa de centros de datos, redes de alta velocidad y sistemas inteligentes de gestión de edificios desde la fase de cimentación.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="md:col-span-7 h-[400px] overflow-hidden order-1 md:order-2">
+                    <img alt="Modern Data Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ewy5eLrAWU9SJJhPL8QdHmv5mue-VUDfez8doRlVZV35ipw3kBII81OLG2e2MrXpURfZLK2ttOOxyk-V6D-9rE41Xn4BqsAn8i41Qc7O0dpAN-gVjpIWlpI5XBNTeX25zVNYnRCx_BMEARcP36bBP8SxVEizy5bbzKxstts9GJEQKMj9AmHIPThMrIRjv8rGnxPKkkXV7Y0UTcVfhCvOtQMa7V40UAsEKAPOzk4qscsjNv0Jyzpb2OORfaN3okJfCdHRd4ncBrI"/>
+                </div>
+            </div>
+
+            <!-- Service 3: Galpones -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img alt="Large industrial warehouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_QkWASj4V9k-hqBGtom4Y3348Sx5_MCIOJvLLm2LydQx_qdQKvrRCltOWcAAYzcSzTdLOWDNrg-2_PZEMr3plNycsyDknv_cLhS-sSVcwYoXI0WG9ZyzY1c1ih2DjEsnMphQ3S5RNiKopUlRwtYDD0fswLrL5mgEBSTVEoP4vrn9EMY_jvdysftpXU17S9LRkq-9P7pvrf5Pve18zuIyDf4S5uzovD9FPzK9FMQxLKcrs2NDuoSV89KdxsLzGL5gDBmCaxNuU2c8"/>
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s3_tag">Logística Estratégica</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s3_title">Construcción de Galpones</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s3_desc">
+                        Ingeniería estructural optimizada para almacenamiento a gran escala y centros logísticos. Estructuras metálicas de rápida ejecución y durabilidad extrema.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 4: Maquinaria -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-5 p-8 md:pl-12 order-2 md:order-1">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s4_tag">Capacidad Operativa</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s4_title">Maquinaria de Construcción</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s4_desc">
+                        Contamos con una flota propia de última generación para movimientos de tierra, izajes críticos y pavimentación industrial de alta precisión.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="md:col-span-7 h-[400px] overflow-hidden order-1 md:order-2">
+                    <img alt="Heavy machinery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBnV7pDHnchnFhMDlwZiDeC1upvZkQh3f7B58n_o4YgZSRSie_mEAa-uZ8fRZsJU-SAgDQ3WXDzE5SODkS0w188ql_RhqfsEG8B4OEPSWXF9v-lCB2NflHNji2tw0TA6BY97CHfjIpGVBDKefZMAGPv3t9TsvFAU2yS6chCmNAjhOJaYkdjB-s6vuEPBjBe-TmlRj0N_E_21KWAjHebGetPurXLRy2vnXsMz4NwtPGCZtpQhFlzJeGii4Zs6lKuXTjtYm_mNWM4AQ"/>
+                </div>
+            </div>
+
+            <!-- Service 5: General -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img alt="Modern skyscraper construction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJKmGiCOajGAOPhFjSSRB4Am3-c45Cp5gyRPJ0DVseOW85mNa9r-WGK6sV5oZG8fLxg0_pmFdviKZU9Rk498TNVCirMBHwtVmerUsMs2JdWAGeVxY1Yguu06c74BlVCpSQW_1Ij8SXBSqiJBUZFyql3gLSK41ft3cgti-JGqyL1hVaBSgJCwIy76bd0c73GW-hcQGgLmNAUrTaWGVE04QcZR0zd4i_R9sh0vmnNygpAmPSH9NQ6lhNe22lVXZBg597s9ldPDMpBC4"/>
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s5_tag">Obra Civil</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s5_title">Construcción General</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s5_desc">
+                        Proyectos residenciales y edificios públicos ejecutados bajo los más estrictos estándares de sostenibilidad y eficiencia energética.
+                    </p>
+                    <a href="{{ url_for('contact') }}" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary py-20 px-8 text-center text-white">
+        <h4 class="text-tertiary-fixed-dim font-headline text-3xl md:text-4xl font-bold mb-6" data-i18n="services_cta_title">¿Listo para iniciar su próximo hito arquitectónico?</h4>
+        <p class="text-white/70 max-w-2xl mx-auto mb-10 text-lg font-light" data-i18n="services_cta_desc">Hablemos sobre su visión. Nuestro equipo de ingeniería está listo para proyectar soluciones a la medida de su ambición.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="{{ url_for('contact') }}" class="bg-secondary text-on-secondary px-10 py-4 font-bold rounded-sm tracking-widest hover:scale-105 transition-transform inline-block" data-i18n="services_cta_btn1">SOLICITAR CONSULTORÍA</a>
+            <a href="{{ url_for('index') }}#proyectos" class="border border-white/20 text-white px-10 py-4 font-bold rounded-sm tracking-widest hover:bg-white/10 transition-all inline-block" data-i18n="services_cta_btn2">VER PORTAFOLIO</a>
+        </div>
+    </section>
+</main>
+{% endblock %}

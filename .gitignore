@@ -1,0 +1,25 @@
+# Python virtual environment
+python/venv/
+python/.venv/
+venv/
+.venv/
+
+# Python cache files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Environment secrets
+.env
+python/.env
+
+# Legacy PHP public folder
+public/
+
+# Editors/OS files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store

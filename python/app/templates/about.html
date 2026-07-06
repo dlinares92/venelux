@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}Nosotros | VENELUX - Ingeniería Monumental{% endblock %}
+
+{% block content %}
+<main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative h-[707px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Venelux Trayectoria" class="w-full h-full object-cover brightness-[0.4]" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGsD3ODZ_h8WZvuMTVoqwr4RrTsZ04__LRKav6_WgcbBDcrIRy2yciH1ZVKQKfuXXwRrt6j7kSYXE9Rhs_ln_G0YQjbt8QyaLjwnRW3FhZOAVTdc_3NCChjdyeRfaapwxh2j8_rXtTax5gAGb4IoAiFBBYfzYlYlwGZcwP39-Gw8NQ-FH5S6rzwiaCYXvFxEkrhHpyJcdDLEYrXvblrhTZrnojxB0B03j1KPygqPBhXIDllbDD0Yu2wR9Dr9XHwUyq-FqyJBEuEmk"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#001e40]/60 via-transparent to-background"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-5xl px-6">
+            <span class="inline-block px-4 py-1 mb-6 border border-secondary text-secondary-fixed-dim font-label text-[0.7rem] tracking-[0.3em] uppercase bg-secondary/10 backdrop-blur-md" data-i18n="about_hero_tag">
+                Tres décadas de excelencia
+            </span>
+            <h1 class="text-5xl md:text-8xl font-headline font-extrabold text-white leading-tight tracking-tighter mb-8" data-i18n="about_hero_title">
+                CONSTRUIMOS <br/>EL <span class="text-secondary">MAÑANA</span>
+            </h1>
+            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed opacity-90" data-i18n="about_hero_desc">
+                Lideramos la transformación del paisaje urbano a través de ingeniería de precisión y una visión inquebrantable de grandeza.
+            </p>
+        </div>
+    </section>
+
+    <!-- Historia de la Empresa -->
+    <section class="py-32 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7">
+                <h2 class="text-primary font-headline text-4xl md:text-5xl font-bold mb-10 tracking-tight leading-tight" data-i18n="about_history_title">
+                    Una historia de <br/>solidez y crecimiento
+                </h2>
+                <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed font-body">
+                    <p data-i18n="about_history_desc_1">
+                        Fundada bajo la premisa de la integridad estructural y el refinamiento arquitectónico, Venelux ha evolucionado desde sus inicios como una firma técnica especializada hasta convertirse en un referente panregional de infraestructura monumental.
+                    </p>
+                    <p data-i18n="about_history_desc_2">
+                        Nuestra trayectoria está marcada por hitos que desafían la ingeniería convencional. Cada proyecto es un testimonio de nuestra capacidad para gestionar la complejidad, integrando tecnologías de vanguardia con una ejecución artesanal en el manejo del hormigón y el acero.
+                    </p>
+                    <div class="pt-8 grid grid-cols-2 gap-8 border-t border-outline-variant/30">
+                        <div>
+                            <span class="block text-4xl font-headline font-black text-secondary">+500</span>
+                            <span class="text-label text-[0.65rem] tracking-widest text-outline uppercase" data-i18n="about_stats_works">Obras Entregadas</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-headline font-black text-secondary">25</span>
+                            <span class="text-label text-[0.65rem] tracking-widest text-outline uppercase" data-i18n="about_stats_warranty">Años de Garantía</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative group">
+                <div class="absolute -top-6 -left-6 w-full h-full border border-secondary/20 z-0 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                <img alt="Directivos Venelux" class="relative z-10 w-full aspect-[4/5] object-cover shadow-2xl" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGRor_9WYl0-1Olq_aeUotn-3ubCqE6CGsUpg3cLd2j9g6oEpnYN8dKEks1sTfZSWlfLnbc3vyvlfkoOrx0me7CoM8jV6k6nsZ3JXGM9nTzW8PpAr632UZz0S5Qwm6_BxuQk4RFGCQmdpCTRWWn6pKikXDr78QJlzCdypVa1lwYBHbdMZJeQyjFE4k74cB0Z1SZLJ3zVobL-gdQtaHixPXOSbDHIn34TQSTP8ZmCk0xN-FG4ddWKwXSiUthtc5EY6MSZ5ez1WjpN0"/>
+                <div class="absolute bottom-0 right-0 bg-primary p-6 z-20 translate-x-4 translate-y-4">
+                    <span class="text-tertiary-fixed text-xs font-label tracking-widest uppercase" data-i18n="about_history_badge">Liderazgo Corporativo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión - Bento Layout -->
+    <section class="py-24 px-6 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Misión -->
+                <div class="bg-white p-12 flex flex-col justify-between group hover:shadow-2xl transition-all duration-500">
+                    <div>
+                        <span class="material-symbols-outlined text-secondary text-5xl mb-8" style="font-variation-settings: 'FILL' 1;">engineering</span>
+                        <h3 class="text-3xl font-headline font-bold text-primary mb-6 uppercase tracking-tight" data-i18n="about_mission_title">Nuestra Misión</h3>
+                        <p class="text-on-surface-variant text-lg leading-relaxed" data-i18n="about_mission_desc">
+                            Ejecutar obras de infraestructura con los más altos estándares de ingeniería de vanguardia, garantizando la seguridad, sostenibilidad y el retorno de valor para nuestros socios y la sociedad.
+                        </p>
+                    </div>
+                    <div class="mt-12 flex items-center gap-4">
+                        <div class="h-px flex-1 bg-outline-variant/30"></div>
+                        <span class="text-label text-[0.65rem] tracking-[0.2em] text-outline uppercase" data-i18n="about_mission_footer">Excelencia Técnica</span>
+                    </div>
+                </div>
+                <!-- Imagen Contextual -->
+                <div class="relative overflow-hidden h-[400px] lg:h-auto">
+                    <img alt="Trabajo en Terreno" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7H7lfUUU2TJ3LWLB_sfevoy48ZodHXr9b9A89Z4YAJD0bvcFfTk956c6yDo524IX3CoWZdHUgnRBZ2zukyRcBWG6MvKr5320Av--rYhwn7zouWbgTFuvA51hIwED6dwyG5v9fBuXevCwLQLnt3FauKQOUWuDFqRGBZWy6zYRz8NbRH5Yu37eNyR9c3hFR0242KH1CMWBgjaiIq-hR7InJf09rH2o7CQ9bg1rxzicRMOiUwTJ3p0eQA7pTmEvcDd0VJXDgoUnF06k"/>
+                    <div class="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+                <!-- Imagen Contextual 2 -->
+                <div class="hidden lg:block relative overflow-hidden">
+                    <img alt="Infraestructura Global" class="w-full h-full object-cover" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXnaJde_DulqFIxz4iFjaMUII78Le3FIGrVwQy08lpSE-AwnMfUptvI15q_op17H68x8wCikrHr4tQNjQTbUOYnC0hsCPp7NHPNzeFNqNRufErviYCvvtxbRZvM5zUbvfa3jl4npdYtJWGIzQbgMCq7MsaH3Wy4G4_RYe0v8jvNFWyILO_0HVJqmsWvp7TtI7Gf2atqPmYZS17CCca2BvQDFq2yloJIuNQZa4vnQz-3m_Qgn1qLAHGSU6uQ3I_iS5iscm4b-lHoao"/>
+                </div>
+                <!-- Visión -->
+                <div class="bg-primary p-12 flex flex-col justify-between text-white">
+                    <div>
+                        <span class="material-symbols-outlined text-tertiary-fixed text-5xl mb-8">language</span>
+                        <h3 class="text-3xl font-headline font-bold mb-6 uppercase tracking-tight" data-i18n="about_vision_title">Nuestra Visión</h3>
+                        <p class="text-slate-300 text-lg leading-relaxed" data-i18n="about_vision_desc">
+                            Consolidarnos como la constructora líder en el desarrollo de infraestructura crítica a nivel global, siendo reconocidos por nuestra capacidad de innovación y nuestro compromiso con el legado monumental.
+                        </p>
+                    </div>
+                    <div class="mt-12 flex items-center gap-4">
+                        <div class="h-px flex-1 bg-white/20"></div>
+                        <span class="text-label text-[0.65rem] tracking-[0.2em] text-slate-400 uppercase" data-i18n="about_vision_footer">Impacto Global</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-32 px-6 bg-white overflow-hidden relative">
+        <div class="absolute right-0 top-0 text-[20rem] font-black text-slate-50 leading-none select-none -z-0 translate-x-1/4 -translate-y-1/4">
+            VENELUX
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div>
+                    <span class="text-secondary font-label tracking-[0.4em] uppercase text-xs mb-4 block" data-i18n="about_values_tag">Cimientos Éticos</span>
+                    <h2 class="text-primary font-headline text-5xl font-bold tracking-tighter" data-i18n="about_values_title">Nuestros Valores</h2>
+                </div>
+                <p class="max-w-md text-on-surface-variant font-body" data-i18n="about_values_desc">
+                    La cultura organizacional de Venelux se basa en principios innegociables que guían cada decisión en el campo y en la oficina.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Excelencia -->
+                <div class="border-l-4 border-secondary pl-8 py-4">
+                    <h4 class="text-xl font-headline font-bold text-primary mb-4 uppercase" data-i18n="about_val1_title">Excelencia</h4>
+                    <p class="text-on-surface-variant leading-relaxed" data-i18n="about_val1_desc">
+                        No aceptamos la mediocridad. Buscamos la perfección en cada acabado y la eficiencia en cada proceso técnico.
+                    </p>
+                </div>
+                <!-- Compromiso -->
+                <div class="border-l-4 border-secondary pl-8 py-4">
+                    <h4 class="text-xl font-headline font-bold text-primary mb-4 uppercase" data-i18n="about_val2_title">Compromiso</h4>
+                    <p class="text-on-surface-variant leading-relaxed" data-i18n="about_val2_desc">
+                        Nuestra palabra es tan sólida como nuestras estructuras. Cumplimos plazos y superamos expectativas contractuales.
+                    </p>
+                </div>
+                <!-- Seguridad -->
+                <div class="border-l-4 border-secondary pl-8 py-4">
+                    <h4 class="text-xl font-headline font-bold text-primary mb-4 uppercase" data-i18n="about_val3_title">Seguridad</h4>
+                    <p class="text-on-surface-variant leading-relaxed" data-i18n="about_val3_desc">
+                        La integridad física de nuestro equipo es la prioridad absoluta. Cero accidentes es nuestra única métrica aceptable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-24 bg-primary text-white text-center px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-headline font-bold mb-8" data-i18n="about_cta_title">¿Listo para proyectar su próxima gran obra?</h2>
+            <a href="{{ url_for('contact') }}" class="inline-block bg-secondary text-white px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-[#c85200] transition-all duration-300" data-i18n="about_cta_btn">
+                Hable con un Experto
+            </a>
+        </div>
+    </section>
+</main>
+{% endblock %}
