@@ -93,6 +93,12 @@ def build_static():
         f.write("/nosotros /nosotros.html 200\n")
         f.write("/contacto /contacto.html 200\n")
     print("  [OK] Creado archivo '_redirects' para Cloudflare Pages.")
+    
+    # Create .nojekyll file for GitHub Pages compatibility (allows files starting with underscore)
+    nojekyll_path = os.path.join(dist_dir, '.nojekyll')
+    with open(nojekyll_path, 'w', encoding='utf-8') as f:
+        f.write("")
+    print("  [OK] Creado archivo '.nojekyll' para GitHub Pages.")
                 
     print("\n--- ¡Compilación estática completada con éxito! ---")
     print(f"Ubicación de la build lista para Cloudflare: {dist_dir}")
