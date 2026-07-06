@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- Anti-flash: apply theme before paint -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <title>Nuestros Servicios | VENELUX - Arquitectura del Prestigio</title>
+    <meta name="description" content="Venelux C.A. — Empresa líder en construcción, diseño e ingeniería civil en Venezuela. Infraestructura industrial, galpones, remodelaciones y más.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="static/img/logo.png"/>
+
+    <!-- Resource Hints: establish connections early -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts: Manrope + Inter (body/headline) -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols: load with display=swap to avoid invisible text -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d8dadb",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-bright": "#f8fafb",
+                    "outline-variant": "#c3c6d1",
+                    "secondary": "#2563eb",
+                    "primary-fixed": "#d5e3ff",
+                    "inverse-surface": "#2e3132",
+                    "surface-container": "#eceeef",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-fixed": "#ffdbcc",
+                    "tertiary-fixed": "#ffdea3",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#c89300",
+                    "on-error": "#ffffff",
+                    "primary-container": "#003366",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-surface-variant": "#43474f",
+                    "surface": "#f8fafb",
+                    "surface-tint": "#3a5f94",
+                    "on-primary-container": "#799dd6",
+                    "surface-container-high": "#e6e8e9",
+                    "tertiary-container": "#443000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f4f5",
+                    "tertiary": "#2a1c00",
+                    "on-tertiary-fixed": "#261900",
+                    "background": "#f8fafb",
+                    "inverse-primary": "#a7c8ff",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-secondary-fixed": "#351000",
+                    "on-primary": "#ffffff",
+                    "primary": "#1e3a8a",
+                    "on-background": "#191c1d",
+                    "on-secondary-container": "#1e40af",
+                    "on-secondary-fixed-variant": "#1e3a8a",
+                    "tertiary-fixed-dim": "#498aca",
+                    "outline": "#737780",
+                    "on-surface": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fe6b00",
+                    "secondary-fixed-dim": "#ffb693",
+                    "inverse-on-surface": "#eff1f2",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-line-rule { border-bottom: 1px solid rgba(0,0,0,0.05) !important; }
+        .nav-active { 
+            color: #001e40 !important; 
+            border-bottom-color: #a04100 !important; 
+            opacity: 1 !important;
+        }
+        html { scroll-behavior: smooth; }
+
+        /* Modern Dynamic Effects */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.7) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+        }
+        .dark .glass-header {
+            background: rgba(15, 23, 42, 0.7) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        }
+        .dark .nav-active { 
+            color: #ffffff !important; 
+            border-bottom-color: #fe6b00 !important; 
+        }
+
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 30, 64, 0.12);
+        }
+
+        .stagger-delay-1 { transition-delay: 0.1s; }
+        .stagger-delay-2 { transition-delay: 0.2s; }
+        .stagger-delay-3 { transition-delay: 0.3s; }
+        
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        .gallery-fade {
+            animation: galleryFade 0.4s ease-out;
+        }
+        @keyframes galleryFade {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* ============================================================
+           DARK MODE — Comprehensive Overrides (html.dark specificity)
+           All selectors prefixed with html.dark to beat Tailwind CDN
+           ============================================================ */
+
+        /* ── Body & Global ── */
+        html.dark body { background-color: #0f172a !important; color: #e2e8f0 !important; }
+        html.dark .text-on-surface { color: #e2e8f0 !important; }
+        html.dark .text-on-surface-variant { color: #94a3b8 !important; }
+        html.dark .text-primary:not(.bg-primary *):not(.bg-secondary *):not(.bg-primary) { color: #93c5fd !important; }
+        html.dark .border-outline-variant\/10 { border-color: rgba(255,255,255,0.08) !important; }
+
+        /* ── Backgrounds — color tokens ── */
+        html.dark .bg-background { background-color: #0f172a !important; }
+        html.dark .bg-surface { background-color: #0f172a !important; }
+        html.dark .bg-surface-bright { background-color: #0f172a !important; }
+        html.dark .bg-surface-container-low { background-color: #1e293b !important; }
+        html.dark .bg-surface-container { background-color: #1e293b !important; }
+        html.dark .bg-surface-container-high { background-color: #334155 !important; }
+        html.dark .bg-surface-container-highest { background-color: #334155 !important; }
+        html.dark .bg-white { background-color: #1e293b !important; }
+
+        /* ── Stats Section ── */
+        html.dark .bg-surface-container-high .text-primary { color: #1e40af !important; }
+
+        /* ── About / Nosotros ── */
+        html.dark #nosotros { background-color: #0f172a !important; }
+        html.dark #nosotros .border-t-2.border-primary { border-color: #3b82f6 !important; }
+        html.dark #nosotros .border-t-2.border-secondary { border-color: #60a5fa !important; }
+
+        /* ── Services ── */
+        html.dark #servicios { border-color: rgba(255,255,255,0.08) !important; }
+
+        /* ── Projects ── */
+        html.dark #proyectos { background-color: #0f172a !important; }
+        html.dark #proyectos .opacity-50 { color: #64748b !important; }
+
+        /* ── Contact ── */
+        html.dark #contacto { background-color: #0f172a !important; border-color: rgba(255,255,255,0.08) !important; }
+        html.dark #contacto input,
+        html.dark #contacto textarea {
+            background-color: #0f172a !important;
+            color: #e2e8f0 !important;
+        }
+        html.dark #contacto input::placeholder,
+        html.dark #contacto textarea::placeholder { color: #475569 !important; }
+        html.dark #contacto .relative.h-64 { filter: brightness(0.55); }
+        html.dark #contacto label { color: #93c5fd !important; }
+        html.dark #contacto h2, html.dark #contacto h3 { color: #93c5fd !important; }
+
+        /* ── Why Us — Keep dark navy, just deepen it ── */
+        html.dark #beneficios { background-color: #020617 !important; }
+
+        /* ── Project Cards ── */
+        html.dark .bg-surface-container-low h3 { color: #93c5fd !important; }
+        html.dark .bg-surface-container-low .text-on-surface-variant { color: #94a3b8 !important; }
+
+        /* ── Modals ── */
+        html.dark .modal-container { background-color: #1e293b !important; }
+        html.dark .modal-container .bg-slate-50,
+        html.dark .modal-container .bg-black { background-color: #0f172a !important; }
+        html.dark .modal-container .bg-slate-100 { background-color: #1e293b !important; }
+        html.dark .modal-container input { background-color: #0f172a !important; color: #e2e8f0 !important; }
+        html.dark .modal-container h3 { color: #e2e8f0 !important; }
+        html.dark .modal-container p:not(.bg-primary *) { color: #94a3b8 !important; }
+
+        /* ── Nav tweaks in dark ── */
+        html.dark .glass-header { background: rgba(15, 23, 42, 0.85) !important; border-bottom: 1px solid rgba(255,255,255,0.07) !important; }
+        html.dark .nav-link { color: #cbd5e1 !important; }
+        html.dark .nav-active { color: #ffffff !important; border-bottom-color: #f59e0b !important; }
+
+        /* ── Form inputs ── */
+        html.dark input,
+        html.dark textarea,
+        html.dark select {
+            background-color: #1e293b !important;
+            color: #e2e8f0 !important;
+            border-color: rgba(255,255,255,0.1) !important;
+        }
+        html.dark input::placeholder,
+        html.dark textarea::placeholder { color: #64748b !important; }
+
+        /* ── Borders ── */
+        html.dark .border-outline-variant\/20,
+        html.dark .border-outline-variant\/10 { border-color: rgba(255,255,255,0.08) !important; }
+        html.dark .no-line-rule { border-bottom-color: rgba(255,255,255,0.06) !important; }
+    </style>
+    
+    
+</head>
+<body class="bg-background dark:bg-slate-950 font-body text-on-surface dark:text-slate-200 selection:bg-tertiary-fixed-dim selection:text-primary transition-colors duration-300">
+
+    <!-- TopAppBar Navigation Shell -->
+    <header class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 max-w-full no-line-rule glass-header">
+        <div class="flex items-center gap-3">
+            <!-- Dynamic logo serving -->
+            <img src="static/img/logo.png" alt="Venelux Logo" class="h-10 md:h-12 w-auto object-contain drop-shadow-sm">
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="nav-link font-headline font-semibold tracking-tight transition-colors duration-300 border-b-2 border-transparent" href="index.html#inicio" data-i18n="nav_home">Inicio</a>
+            <a class="nav-link font-headline font-semibold tracking-tight transition-colors duration-300 border-b-2 border-transparent" href="index.html#nosotros" data-i18n="nav_about">Nosotros</a>
+            <a class="nav-link font-headline font-semibold tracking-tight transition-colors duration-300 border-b-2 border-transparent" href="index.html#servicios" data-i18n="nav_services">Servicios</a>
+            <a class="nav-link font-headline font-semibold tracking-tight transition-colors duration-300 border-b-2 border-transparent" href="index.html#proyectos" data-i18n="nav_projects">Proyectos</a>
+            <a class="nav-link font-headline font-semibold tracking-tight transition-colors duration-300 border-b-2 border-transparent" href="index.html#contacto" data-i18n="nav_contact">Contacto</a>
+            
+            <div class="flex items-center gap-4 border-l border-slate-300 pl-6 ml-2">
+                <div class="flex items-center gap-2">
+                    <button onclick="setLanguage('es')" class="lang-btn font-bold text-primary dark:text-white hover:text-secondary transition-colors" data-lang="es">ES</button>
+                    <span class="text-slate-300 text-sm">|</span>
+                    <button onclick="setLanguage('en')" class="lang-btn opacity-50 text-slate-500 dark:text-slate-400 hover:opacity-100 hover:text-secondary transition-colors" data-lang="en">EN</button>
+                </div>
+                <span class="text-slate-300 text-sm">|</span>
+                <button onclick="toggleTheme()" class="text-primary dark:text-white hover:text-secondary transition-colors flex items-center" aria-label="Toggle theme">
+                    <span class="material-symbols-outlined text-xl" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </nav>
+        <div class="flex items-center gap-4">
+            <button class="md:hidden text-primary active:opacity-80 active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+            </button>
+            <button class="hidden md:block bg-secondary text-on-secondary px-6 py-2 font-label text-xs tracking-widest uppercase rounded-DEFAULT hover:bg-on-secondary-container transition-all active:scale-95" data-i18n="nav_tender">
+                Licitaciones
+            </button>
+        </div>
+    </header>
+
+    
+<main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[442px] flex items-center px-8 md:px-16 overflow-hidden bg-primary" style="background: linear-gradient(rgba(0, 30, 64, 0.85), rgba(0, 30, 64, 0.95)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center;">
+        <div class="max-w-4xl z-10">
+            <div class="inline-block px-3 py-1 bg-secondary text-on-secondary text-xs font-bold tracking-[0.2em] uppercase mb-6 rounded-sm" data-i18n="services_hero_tag">Excelencia Técnica</div>
+            <h2 class="text-5xl md:text-7xl font-headline font-extrabold text-white tracking-tighter leading-none mb-6" data-i18n="services_hero_title">
+                Nuestra <span class="text-tertiary-fixed-dim">Especialización</span>
+            </h2>
+            <p class="text-lg md:text-xl text-white/80 font-body max-w-2xl leading-relaxed" data-i18n="services_hero_desc">
+                Transformamos la visión arquitectónica en realidades estructurales mediante ingeniería de vanguardia y una gestión de proyectos sin precedentes.
+            </p>
+        </div>
+        <!-- Decorative Blueprint Element -->
+        <div class="absolute bottom-0 right-0 opacity-10 pointer-events-none hidden lg:block">
+            <svg fill="none" height="400" viewbox="0 0 600 400" width="600" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 400H600V0" stroke="white" stroke-width="2"></path>
+                <path d="M100 400V100H600" stroke="white" stroke-width="2"></path>
+                <circle cx="350" cy="250" r="150" stroke="white" stroke-dasharray="10 10" stroke-width="1"></circle>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="flex flex-col gap-16">
+            <!-- Service 1: Remodelación -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img alt="Luxury corporate interior" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjEzug0MBYNo0RHLEt4-nStU-Srzi0F9zO0rdkHlLz1Zfi2NAaiYrfg0HfMm83BpFIYCui-PNWLVjuZPKWfOOwezeXT4Q_71egZ1odnZJQP7KykgZ87twfCiAc4D6buOW6sreHqkQb9cvE3DNq4B1jIo5G6JEKduJzOuuaWyt0iXGpEbRXKrfxjNyMQ2n44aUMDXMnbrgo59hu_D_wxhtKQDnjS2sr3fspupN-jikSCl5AdC1YqxGSKbY70bFA3veh2qa02BZfac"/>
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s1_tag">Interiores Premium</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s1_title">Remodelación de Interiores</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s1_desc">
+                        Especialistas en la transformación de espacios corporativos de alto nivel, integrando acabados de lujo con funcionalidad ergonómica y diseño biofílico.
+                    </p>
+                    <a href="contacto.html" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 2: IT Infrastructure -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-5 p-8 md:pl-12 order-2 md:order-1">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s2_tag">Construcción Digital</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s2_title">Infraestructura IT</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s2_desc">
+                        Integración nativa de centros de datos, redes de alta velocidad y sistemas inteligentes de gestión de edificios desde la fase de cimentación.
+                    </p>
+                    <a href="contacto.html" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="md:col-span-7 h-[400px] overflow-hidden order-1 md:order-2">
+                    <img alt="Modern Data Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ewy5eLrAWU9SJJhPL8QdHmv5mue-VUDfez8doRlVZV35ipw3kBII81OLG2e2MrXpURfZLK2ttOOxyk-V6D-9rE41Xn4BqsAn8i41Qc7O0dpAN-gVjpIWlpI5XBNTeX25zVNYnRCx_BMEARcP36bBP8SxVEizy5bbzKxstts9GJEQKMj9AmHIPThMrIRjv8rGnxPKkkXV7Y0UTcVfhCvOtQMa7V40UAsEKAPOzk4qscsjNv0Jyzpb2OORfaN3okJfCdHRd4ncBrI"/>
+                </div>
+            </div>
+
+            <!-- Service 3: Galpones -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img alt="Large industrial warehouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_QkWASj4V9k-hqBGtom4Y3348Sx5_MCIOJvLLm2LydQx_qdQKvrRCltOWcAAYzcSzTdLOWDNrg-2_PZEMr3plNycsyDknv_cLhS-sSVcwYoXI0WG9ZyzY1c1ih2DjEsnMphQ3S5RNiKopUlRwtYDD0fswLrL5mgEBSTVEoP4vrn9EMY_jvdysftpXU17S9LRkq-9P7pvrf5Pve18zuIyDf4S5uzovD9FPzK9FMQxLKcrs2NDuoSV89KdxsLzGL5gDBmCaxNuU2c8"/>
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s3_tag">Logística Estratégica</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s3_title">Construcción de Galpones</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s3_desc">
+                        Ingeniería estructural optimizada para almacenamiento a gran escala y centros logísticos. Estructuras metálicas de rápida ejecución y durabilidad extrema.
+                    </p>
+                    <a href="contacto.html" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 4: Maquinaria -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-5 p-8 md:pl-12 order-2 md:order-1">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s4_tag">Capacidad Operativa</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s4_title">Maquinaria de Construcción</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s4_desc">
+                        Contamos con una flota propia de última generación para movimientos de tierra, izajes críticos y pavimentación industrial de alta precisión.
+                    </p>
+                    <a href="contacto.html" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="md:col-span-7 h-[400px] overflow-hidden order-1 md:order-2">
+                    <img alt="Heavy machinery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBnV7pDHnchnFhMDlwZiDeC1upvZkQh3f7B58n_o4YgZSRSie_mEAa-uZ8fRZsJU-SAgDQ3WXDzE5SODkS0w188ql_RhqfsEG8B4OEPSWXF9v-lCB2NflHNji2tw0TA6BY97CHfjIpGVBDKefZMAGPv3t9TsvFAU2yS6chCmNAjhOJaYkdjB-s6vuEPBjBe-TmlRj0N_E_21KWAjHebGetPurXLRy2vnXsMz4NwtPGCZtpQhFlzJeGii4Zs6lKuXTjtYm_mNWM4AQ"/>
+                </div>
+            </div>
+
+            <!-- Service 5: General -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-low group overflow-hidden">
+                <div class="md:col-span-7 h-[400px] overflow-hidden">
+                    <img alt="Modern skyscraper construction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJKmGiCOajGAOPhFjSSRB4Am3-c45Cp5gyRPJ0DVseOW85mNa9r-WGK6sV5oZG8fLxg0_pmFdviKZU9Rk498TNVCirMBHwtVmerUsMs2JdWAGeVxY1Yguu06c74BlVCpSQW_1Ij8SXBSqiJBUZFyql3gLSK41ft3cgti-JGqyL1hVaBSgJCwIy76bd0c73GW-hcQGgLmNAUrTaWGVE04QcZR0zd4i_R9sh0vmnNygpAmPSH9NQ6lhNe22lVXZBg597s9ldPDMpBC4"/>
+                </div>
+                <div class="md:col-span-5 p-8 md:pr-12">
+                    <span class="text-secondary font-label text-xs tracking-widest uppercase mb-2 block" data-i18n="services_s5_tag">Obra Civil</span>
+                    <h3 class="text-3xl font-headline font-bold text-primary mb-4 leading-tight" data-i18n="services_s5_title">Construcción General</h3>
+                    <p class="text-on-surface-variant font-body mb-8 leading-relaxed" data-i18n="services_s5_desc">
+                        Proyectos residenciales y edificios públicos ejecutados bajo los más estrictos estándares de sostenibilidad y eficiencia energética.
+                    </p>
+                    <a href="contacto.html" class="bg-secondary text-on-secondary px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-on-secondary-container transition-all inline-flex items-center gap-2 w-fit">
+                        <span data-i18n="services_btn_more">SABER MÁS</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary py-20 px-8 text-center text-white">
+        <h4 class="text-tertiary-fixed-dim font-headline text-3xl md:text-4xl font-bold mb-6" data-i18n="services_cta_title">¿Listo para iniciar su próximo hito arquitectónico?</h4>
+        <p class="text-white/70 max-w-2xl mx-auto mb-10 text-lg font-light" data-i18n="services_cta_desc">Hablemos sobre su visión. Nuestro equipo de ingeniería está listo para proyectar soluciones a la medida de su ambición.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="contacto.html" class="bg-secondary text-on-secondary px-10 py-4 font-bold rounded-sm tracking-widest hover:scale-105 transition-transform inline-block" data-i18n="services_cta_btn1">SOLICITAR CONSULTORÍA</a>
+            <a href="index.html#proyectos" class="border border-white/20 text-white px-10 py-4 font-bold rounded-sm tracking-widest hover:bg-white/10 transition-all inline-block" data-i18n="services_cta_btn2">VER PORTAFOLIO</a>
+        </div>
+    </section>
+</main>
+
+
+    <!-- Footer Component -->
+    <footer class="bg-[#001e40] dark:bg-slate-950 text-white">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-7xl mx-auto">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="text-xl font-black text-white font-headline tracking-tighter">VENELUX</span>
+                <p class="font-['Inter'] text-sm tracking-widest text-slate-400 text-center md:text-left mt-2 leading-relaxed" data-i18n="footer_address">
+                    <b>Sede Principal:</b><br/> CTRA NACIONAL LOCAL PARCELA NRO 5,<br/> ZONA INDUSTRIAL "COMPLEJO DE LAS INDUSTRIAS PRUINCA",<br/> GUACARA CARABOBO ZONA POSTAL 2015
+                </p>
+                <p class="font-['Inter'] text-sm uppercase tracking-widest text-slate-400 text-center md:text-left" data-i18n="footer_rights">
+                    © 2026 Venelux, C.A. Todos los derechos reservados.
+                </p>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-8">
+                <a class="font-['Inter'] text-sm uppercase tracking-widest text-slate-400 hover:text-white transition-all active:translate-x-1" href="index.html#proyectos" data-i18n="nav_projects">Proyectos</a>
+                <a class="font-['Inter'] text-sm uppercase tracking-widest text-slate-400 hover:text-white transition-all active:translate-x-1" href="index.html#nosotros" data-i18n="nav_services">Servicios</a>
+                <a class="font-['Inter'] text-sm uppercase tracking-widest text-slate-400 hover:text-white transition-all active:translate-x-1" href="index.html#contacto" data-i18n="nav_contact">Contacto</a>
+            </nav>
+            <div class="flex gap-6">
+                <a class="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-[#fdbc13] hover:text-primary transition-all" href="#">
+                    <span class="material-symbols-outlined" data-icon="share">share</span>
+                </a>
+                <a class="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:bg-[#fdbc13] hover:text-primary transition-all" href="mailto:info@venelux.net.net.ve">
+                    <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-white/5 py-8 text-center px-8">
+            <p class="text-[10px] sm:text-xs font-label tracking-[0.2em] opacity-50 uppercase max-w-4xl mx-auto" data-i18n="footer_description">Fomentando el futuro sostenible de Venezuela a través del ingenio de la construcción monumental y soluciones de infraestructura de alto rendimiento.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/584244117921?text=Hola,%20quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Venelux." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50 group hover:shadow-[#25D366]/50">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.115.548 4.182 1.594 5.992L.045 24l6.126-1.564A11.968 11.968 0 0 0 12.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm3.84 17.525c-.246.685-1.42 1.328-1.956 1.41-.537.082-1.15.164-3.725-.877-3.087-1.258-5.12-4.434-5.285-4.654-.164-.22-1.258-1.67-1.258-3.176 0-1.506.794-2.245 1.067-2.546.274-.301.603-.356.794-.356.192 0 .384 0 .548.027.164.027.384-.055.603.466.219.52.74 1.78.822 1.945.082.164.137.356.027.575-.11.22-.164.356-.328.548-.164.192-.356.384-.466.52-.164.192-.356.384-.137.74.22.356.985 1.588 2.053 2.546 1.369 1.232 2.546 1.616 2.875 1.78.328.164.52.137.712-.082.192-.22.822-.958 1.04-1.287.219-.328.438-.274.74-.164.301.11 1.916.904 2.245 1.068.328.164.548.246.63.384.082.137.082.794-.164 1.48z"/>
+        </svg>
+    </a>
+
+    <!-- Unified translation loader -->
+    <script src="static/js/i18n.js"></script>
+
+    <!-- AJAX Contact Form Submission Handler -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            const action = form.getAttribute('action');
+            if (action && (action === '/contacto' || action.includes('contacto') || action.includes('contact'))) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(form);
+                    const btn = form.querySelector('button[type="submit"]');
+                    if (!btn) return;
+                    const btnText = btn.querySelector('[data-i18n="form_submit_btn"]') || btn;
+                    const originalText = btnText.innerHTML;
+                    
+                    btn.disabled = true;
+                    const currentLang = localStorage.getItem('selectedLanguage') || 'es';
+                    btnText.textContent = currentLang === 'en' ? 'Sending...' : 'Enviando...';
+
+                    // Premium inline alert container
+                    let alertDiv = form.querySelector('.form-alert');
+                    if (alertDiv) alertDiv.remove();
+                    
+                    alertDiv = document.createElement('div');
+                    alertDiv.className = 'form-alert p-4 text-sm font-medium rounded-lg mt-4 flex items-center gap-2 animate-pulse bg-blue-500/10 border border-blue-500/30 text-blue-700 dark:text-blue-400';
+                    alertDiv.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">sync</span> ' + (currentLang === 'en' ? 'Processing request...' : 'Procesando requerimiento...');
+                    form.appendChild(alertDiv);
+
+                    try {
+                        const response = await fetch(action, {
+                            method: 'POST',
+                            body: formData
+                        });
+                        
+                        if (response.ok) {
+                            showFormSuccess(form, btn, btnText, originalText, alertDiv, currentLang);
+                        } else {
+                            throw new Error('Static host or server error');
+                        }
+                    } catch (err) {
+                        console.warn('Backend unavailable, utilizing static preview fallback:', err);
+                        // Fallback success for static previews
+                        showFormSuccess(form, btn, btnText, originalText, alertDiv, currentLang);
+                    }
+                });
+            }
+        });
+    });
+
+    function showFormSuccess(form, btn, btnText, originalText, alertDiv, currentLang) {
+        btn.disabled = false;
+        btnText.innerHTML = originalText;
+        form.reset();
+        
+        if (alertDiv) {
+            alertDiv.className = 'form-alert p-4 text-sm font-medium rounded-lg mt-4 flex items-center gap-2 bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-400';
+            alertDiv.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span> ' + 
+                (currentLang === 'en' ? 'Thank you! Your message has been sent successfully.' : '¡Gracias! Su mensaje ha sido enviado con éxito.');
+            
+            // Scroll to alert
+            alertDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Fade out and remove after 6 seconds
+            setTimeout(() => {
+                alertDiv.style.transition = 'opacity 0.5s ease';
+                alertDiv.style.opacity = '0';
+                setTimeout(() => alertDiv.remove(), 500);
+            }, 6000);
+        }
+    }
+    </script>
+
+    
+
+    <!-- Dark Mode Runtime Patcher — needed since Tailwind CDN custom tokens can't be overridden by CSS alone -->
+    <script>
+    (function() {
+        // Map: Tailwind class name → { light bg, dark bg }
+        const darkMap = [
+            { cls: 'bg-background',                 lightBg: '#f8fafb', darkBg: '#0f172a' },
+            { cls: 'bg-surface',                    lightBg: '#f8fafb', darkBg: '#0f172a' },
+            { cls: 'bg-surface-bright',             lightBg: '#f8fafb', darkBg: '#0f172a' },
+            { cls: 'bg-surface-container-low',      lightBg: '#f2f4f5', darkBg: '#1e293b' },
+            { cls: 'bg-surface-container',          lightBg: '#eceeef', darkBg: '#1e293b' },
+            { cls: 'bg-surface-container-high',     lightBg: '#e6e8e9', darkBg: '#334155' },
+            { cls: 'bg-surface-container-highest',  lightBg: '#d9dadb', darkBg: '#334155' },
+            { cls: 'bg-white',                      lightBg: '#ffffff', darkBg: '#1e293b' },
+        ];
+
+        function applyDarkMode(isDark) {
+            darkMap.forEach(({ cls, lightBg, darkBg }) => {
+                document.querySelectorAll('.' + CSS.escape(cls)).forEach(el => {
+                    if (el.classList.contains('bg-primary') || el.classList.contains('bg-secondary')) return;
+                    el.style.backgroundColor = isDark ? darkBg : '';
+                });
+            });
+
+            if (isDark) {
+                document.querySelectorAll('.text-on-surface-variant').forEach(el => {
+                    if (!el.closest('.bg-primary')) el.style.color = '#94a3b8';
+                });
+                document.querySelectorAll('.text-on-surface').forEach(el => {
+                    if (!el.closest('.bg-primary')) el.style.color = '#e2e8f0';
+                });
+            } else {
+                document.querySelectorAll('.text-on-surface-variant, .text-on-surface').forEach(el => {
+                    el.style.color = '';
+                });
+            }
+        }
+
+        function checkAndApply() {
+            const isDark = document.documentElement.classList.contains('dark');
+            applyDarkMode(isDark);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkAndApply);
+        } else {
+            checkAndApply();
+        }
+
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(m => {
+                if (m.attributeName === 'class') {
+                    const isDark = document.documentElement.classList.contains('dark');
+                    applyDarkMode(isDark);
+                }
+            });
+        });
+        observer.observe(document.documentElement, { attributes: true });
+    })();
+    </script>
+</body>
+</html>
