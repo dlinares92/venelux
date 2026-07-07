@@ -1,6 +1,6 @@
 # Venelux Corporativo
 
-Desarrollo del sitio web corporativo para Venelux bajo el patrón MVC, enfocado en alto rendimiento, seguridad y diseño usando el sistema de diseño generado por IA y ajustado.
+
 
 ## Requisitos de Instalación (Entorno XAMPP)
 
